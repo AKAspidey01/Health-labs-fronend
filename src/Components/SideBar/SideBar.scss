@@ -1,0 +1,110 @@
+.SideBar {
+    width: 100%;
+    max-width: 300px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 25px;
+    border-right: 1px solid #D9D9D9;
+    z-index: 99;
+    background: #fff;
+    overflow-y: auto !important;
+    .top-logo-part img {
+        height: 50px !important;
+        object-fit: contain;
+        width: fit-content;
+        // margin: 0px auto;    
+    }
+
+    .parent-nav-list {
+        .parent-nav-item {
+            a {
+                transition-duration: 0.3s;
+                .inactive-icon {
+                    opacity: 100%;
+                }
+                .active-icon {
+                    opacity: 0%;
+                }
+
+                &:hover {
+                    background: #F2F2F2 ;
+                }
+            }
+            a.active {
+                background: #5D5FEF !important;
+                box-shadow: 0px 8px 14px 0px #00000021;
+                .inactive-icon {
+                    opacity: 0% !important;
+                }
+                .active-icon {
+                    opacity: 100% !important;
+                }
+                .right-text p {
+                    color: #fff !important;
+                }
+            }
+
+            button {
+                transition-duration: 0.3s;
+                .inactive-icon {
+                    opacity: 100%;
+                }
+                .active-icon {
+                    opacity: 0%;
+                }
+
+                &:hover {
+                    background: #F2F2F2 ;
+                }
+            }
+            button.active {
+                background: #5D5FEF !important;
+                box-shadow: 0px 8px 14px 0px #00000021;
+                .inactive-icon {
+                    opacity: 0% !important;
+                }
+                .active-icon {
+                    opacity: 100% !important;
+                }
+                .right-text p {
+                    color: #fff !important;
+                }
+                i {
+                    color: #fff;
+                }
+            }
+            .submenu-section {
+                background: #F2F2F2 !important; 
+                border-radius: 15px;
+                ul {
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    li {
+                        width: 100%;
+                        a {
+                            font-size: 14px;
+                            width: 100%;
+                            padding: 6px 14px !important;
+                            border-radius: 8px;
+                            transition-duration: 0.3s;
+
+                            &:hover {
+                                background: #fff;
+                            }
+                        }
+
+                        a.active {
+                            background: #fff !important;
+                            box-shadow: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
