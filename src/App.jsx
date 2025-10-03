@@ -17,6 +17,7 @@ import RefCustomerList from './Components/Administration/RefCustomer/RefCustomer
 import CreateRefCustomer from './Components/Administration/RefCustomer/CreateRefCustomer'
 import TestPackageList from './Components/Administration/TestPackage/TestPackageList'
 import CreateTestPackage from './Components/Administration/TestPackage/CreateTestPackage'
+import PatientCreation from './Components/PatientManagement/PatientCreation/PatientCreation'
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
       <SideBar/>
       <Routes>
         <Route Component={Dashboard} path='/' exact={true} />
+
+        {/* Administration Routes */}
+
         <Route Component={TestDepartmentCreation} path='/administration/manage-test-department' exact={true} />
         <Route Component={CreateDepartment} path='/administration/manage-test-department/create-department' exact={true} />
         <Route Component={TestsListOverview} path='/administration/tests-overview' exact={true} />
@@ -40,6 +44,11 @@ function App() {
         <Route Component={CreateRefCustomer} path='/administration/ref-customers/create-ref-customer' exact={true} />
         <Route Component={TestPackageList} path='/administration/test-packages' exact={true} />
         <Route Component={CreateTestPackage} path='/administration/test-packages/create-test-packages' exact={true} />
+
+
+        {/* Patient Management Routes */}
+        <Route Component={PatientCreation} path='/patientManagement/create-patient' exact={true} />
+
       </Routes>
     </Router>
   )

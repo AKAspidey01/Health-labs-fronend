@@ -88,6 +88,63 @@ const SideBar = () => {
         },
       ]
     },
+    {
+      iconActive: PatientIconActive,
+      icon: PatientIcon,
+      name: 'Manage Patient',
+      isSubMenu: true,
+      link: '/patientManagement',
+      subMenu : [
+        {
+          singleItem: 'Patient Management',
+          link: '/patientManagement/create-patient',
+        },
+        {
+          singleItem: 'Sample Received',
+          link: '/patientManagement/tests-overview',
+        },
+        {
+          singleItem: 'Test Results Entry',
+          link: '/patientManagement/doctor-categories',
+        },
+        {
+          singleItem: 'Test Authorization',
+          link: '/patientManagement/doctor-list',
+        },
+        {
+          singleItem: 'Patient Search',
+          link: '/patientManagement/price-list-creation',
+        },
+        {
+          singleItem: 'Patient Status',
+          link: '/patientManagement/ref-customers',
+        },
+        {
+          singleItem: 'Patient Due Payment',
+          link: '/patientManagement/ref-rates',
+        },
+        {
+          singleItem: 'Patient Deletion',
+          link: '/patientManagement/test-packages',
+        },
+        {
+          singleItem: 'Inpatient Details',
+          link: '/patientManagement/patient-types',
+        },
+        {
+          singleItem: 'Test Results print',
+          link: '/patientManagement/ref-rates',
+        },
+        {
+          singleItem: 'Patient Tests Cancellation',
+          link: '/patientManagement/test-packages',
+        },
+        {
+          singleItem: 'Patient Payment Edit',
+          link: '/patientManagement/patient-types',
+        },
+      ]
+    },
   ]
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -126,12 +183,12 @@ const SideBar = () => {
                       <div className=''> 
                         <button className={`px-5 py-3 w-full rounded-xl flex items-center justify-between ${isActive ? 'active' : ''}`} onClick={() => item.isSubMenu && toggleMenu(index)}>
                           <div className="main-icon-text-sec flex items-center gap-x-4">
-                            <div className="left-icon w-6 h-6 relative">
+                            <div className="left-icon w-5 h-5 relative">
                               <img src={item.icon} className='absolute top-0 left-0 w-full h-full inactive-icon' alt="" />
                               <img src={item.iconActive} className='absolute top-0 left-0 w-full h-full active-icon' alt="" />
                             </div>
                             <div className="right-text">
-                              <p className='text-lg text-inactivegray font-manrope font-semibold'>{item.name}</p>
+                              <p className='text-inactivegray font-manrope font-semibold'>{item.name}</p>
                             </div>
                           </div>
                           <div className="arrow-icon">
@@ -151,12 +208,12 @@ const SideBar = () => {
                       :
                       <NavLink className={'px-5 py-3 inline-block w-full rounded-xl'} to={item.link} end>
                         <div className="main-icon-text-sec flex items-center gap-x-4">
-                          <div className="left-icon w-6 h-6 relative">
+                          <div className="left-icon w-5 h-5 relative">
                             <img src={item.icon} className='absolute top-0 left-0 w-full h-full inactive-icon' alt="" />
                             <img src={item.iconActive} className='absolute top-0 left-0 w-full h-full active-icon' alt="" />
                           </div>
                           <div className="right-text">
-                            <p className='text-lg text-inactivegray font-manrope font-semibold'>{item.name}</p>
+                            <p className='text-inactivegray font-manrope font-semibold'>{item.name}</p>
                           </div>
                         </div>                        
                       </NavLink>
