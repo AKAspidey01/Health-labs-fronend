@@ -80,7 +80,7 @@ const SideBar = () => {
         },
         {
           singleItem: 'Test Package Creation',
-          link: '/administration/test-pac-creation',
+          link: '/administration/test-packages',
         },
         {
           singleItem: 'Patient Types',

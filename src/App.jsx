@@ -15,6 +15,8 @@ import CreatePatientType from './Components/Administration/PatientType/CreatePat
 import PatientTypeList from './Components/Administration/PatientType/PatientTypeList'
 import RefCustomerList from './Components/Administration/RefCustomer/RefCustomerList'
 import CreateRefCustomer from './Components/Administration/RefCustomer/CreateRefCustomer'
+import TestPackageList from './Components/Administration/TestPackage/TestPackageList'
+import CreateTestPackage from './Components/Administration/TestPackage/CreateTestPackage'
 
 function App() {
 
@@ -36,6 +38,8 @@ function App() {
         <Route Component={CreatePatientType} path='/administration/patient-types/create-patient-type' exact={true} />
         <Route Component={RefCustomerList} path='/administration/ref-customers' exact={true} />
         <Route Component={CreateRefCustomer} path='/administration/ref-customers/create-ref-customer' exact={true} />
+        <Route Component={TestPackageList} path='/administration/test-packages' exact={true} />
+        <Route Component={CreateTestPackage} path='/administration/test-packages/create-test-packages' exact={true} />
       </Routes>
     </Router>
   )

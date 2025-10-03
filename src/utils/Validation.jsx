@@ -7,6 +7,15 @@ export const departmentCreationValidation = yup.object().shape({
 });
 
 
+
+export const testPackageCreationCalidation = yup.object().shape({
+  packageName: yup.string().required('Please Enter Package Name'),
+  totalAmount: yup.string().notRequired('Please Enter Total Amount'),
+  testName: yup.string().required('Please Enter Test Name'),
+  testCode: yup.string().required('Please Enter Test Code'),
+});
+
+
 export const testCreationValidation = yup.object().shape({
   testName: yup.string().required('Please Enter Test Name'),
   testCode: yup.string().required('Please Enter Testcode'),
