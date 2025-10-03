@@ -15,7 +15,7 @@ import Switch from '@mui/material/Switch';
 const CreateDoctor = () => {
 
     const [loader , setLoader] = useState(false);
-    const [isACtive , setIsActive] = useState(false);
+    const [isACtive , setIsActive] = useState(true);
     const [password , setPassword] = useState(false);
     const [confirmPass , setConfirmPass] = useState(false)
 

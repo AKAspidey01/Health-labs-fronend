@@ -8,6 +8,8 @@ import Modal from "react-modal";
 import LoaderDna from '../../../utils/LoaderDna'
 import modalStyles from '../../../utils/ModalStyles'
 import Select from 'react-select'
+import EditButton from '../../../utils/TableComponents/EditButton'
+import DeleteButtton from '../../../utils/TableComponents/DeleteButton'
 
 
 const CreateTestPackage = () => {
@@ -37,6 +39,21 @@ const CreateTestPackage = () => {
         { value: 'DEPARTMENT OF CLINICAL BIOCHEMISTRY', label: 'DEPARTMENT OF CLINICAL BIOCHEMISTRY' },
         { value: 'DEPARTMENT OF CLINICAL', label: 'DEPARTMENT OF CLINICAL' },
         { value: 'OTHERS', label: 'OTHERS' }
+    ]
+
+    const testDepartmentList = [
+        {
+            testName: 'ANTI SARS-CoV-2 (COVID-19) ANTIBODY',
+            testCode:'COA19',
+            price: '2500',
+            specialPrice: '2500',
+        },
+        {
+            testName: 'Covid Antigen',
+            testCode:'AG19',
+            price: '2500',
+            specialPrice: '2500',
+        }
     ]
 
   return (
@@ -108,6 +125,40 @@ const CreateTestPackage = () => {
                                         <Field type="text" name="testCode" placeholder='Enter Test code' className={`${errors.testCode && touched.testCode ? 'error' : ''}`}/>
                                     </div>
                                 </div>
+
+                                <div className="col-span-12 ">
+                                    <div className="main-table-section bg-lightBorder/40 rounded-[15px] overflow-hidden">
+                                        <div className="table-section-listing">
+                                            <table cellPadding={10}>
+                                                <thead>
+                                                    <tr>
+                                                        <th>S.No</th>
+                                                        <th>Test Code</th>
+                                                        <th>Test Name</th>
+                                                        <th>Price</th>
+                                                        <th>Special Price</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {testDepartmentList.map((item ,index) => {
+                                                        return (
+                                                            <tr>
+                                                                <td>0{index+1}</td>
+                                                                <td>{item.testCode}</td>
+                                                                <td>{item.testName}</td>
+                                                                <td>{item.price}</td>
+                                                                <td><input type="text" defaultValue={item.specialPrice} className='bg-white'/></td>
+                                                                <td><DeleteButtton/></td>
+                                                            </tr>
+                                                        )
+                                                    })}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>            
+                                </div>
+
                                 <div className="single-form-input-sec col-span-6 text-left">
                                     <ThemeButton type={'submit'} onClick={handleSubmit} text={"Add Test Package"}/>
                                 </div>
